@@ -11,6 +11,23 @@
 (function(){
   if(window.top !== window) return; // 在iframe中不渲染灯笼
   const style = document.createElement('style');
+  // 原版颜色备份
+  // const colors_backup = {
+  //   suiLight: '#dc8f03',
+  //   suiDark: '#ffa500',
+  //   deng_box_shadow: 'rgba(250, 108, 0, 1)',
+  //   r1: 'rgba(216, 0, 15, 0.8)',
+  //   r2: 'rgba(216, 0, 15, 0.1)',
+  // }
+  const word = '清明'
+  // 喜迎清明，黑白配色
+  const colors = {
+    suiLight: '#ffffff',
+    suiDark: '#9b9b9a',
+    deng_box_shadow: 'rgb(74,74,74)',
+    r1: 'rgba(16, 16, 16, 80%)',
+    r2: 'rgba(16, 16, 16, 10%)',
+  }
   style.innerHTML = `
 .ssz_deng-box {
 position: fixed;
@@ -30,43 +47,39 @@ z-index: 99999;
  width: 120px;
  height: 90px;
  margin: 50px;
- background: #d8000f;
- background: rgba(216, 0, 15, 0.8);
+ background: ${colors.r1};
  border-radius: 50% 50%;
  -webkit-transform-origin: 50% -100px;
  -webkit-animation: swing 5s infinite ease-in-out;
- box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+ box-shadow: -5px 5px 30px 4px ${colors.deng_box_shadow};
 }
 .ssz_deng {
  position: relative;
  width: 120px;
  height: 90px;
  margin: 50px;
- background: #d8000f;
- background: rgba(216, 0, 15, 0.8);
+ background: ${colors.r1};
  border-radius: 50% 50%;
  -webkit-transform-origin: 50% -100px;
  -webkit-animation: swing 3s infinite ease-in-out;
- box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+ box-shadow: -5px 5px 50px 4px ${colors.deng_box_shadow};
 }
 
 .ssz_deng-a {
  width: 100px;
  height: 90px;
- background: #d8000f;
- background: rgba(216, 0, 15, 0.1);
+ background: ${colors.r2};
  margin: 12px 8px 8px 8px;
  border-radius: 50% 50%;
- border: 2px solid #dc8f03;
+ border: 2px solid ${colors.suiLight};
 }
 .ssz_deng-b {
  width: 45px;
  height: 90px;
- background: #d8000f;
- background: rgba(216, 0, 15, 0.1);
+ background: ${colors.r2};
  margin: -4px 8px 8px 26px;
  border-radius: 50% 50%;
- border: 2px solid #dc8f03;
+ border: 2px solid ${colors.suiLight};
 }
 
 .ssz_xian {
@@ -75,7 +88,7 @@ z-index: 99999;
  left: 60px;
  width: 2px;
  height: 40px;
- background: #dc8f03;
+ background: ${colors.suiLight};
 }
 
 .ssz_shui-a {
@@ -85,7 +98,7 @@ z-index: 99999;
  margin: -5px 0 0 59px;
  -webkit-animation: swing 4s infinite ease-in-out;
  -webkit-transform-origin: 50% -45px;
- background: #ffa500;
+ background: ${colors.suiDark};
  border-radius: 0 0 5px 5px;
 }
 
@@ -95,7 +108,7 @@ z-index: 99999;
  left: -2px;
  width: 10px;
  height: 10px;
- background: #dc8f03;
+ background: ${colors.suiLight};
  border-radius: 50%;
 }
 
@@ -105,7 +118,7 @@ z-index: 99999;
  left: -2px;
  width: 10px;
  height: 35px;
- background: #ffa500;
+ background: ${colors.suiDark};
  border-radius: 0 0 0 5px;
 }
 
@@ -119,9 +132,9 @@ z-index: 99999;
  display: block;
  z-index: 999;
  border-radius: 5px 5px 0 0;
- border: solid 1px #dc8f03;
- background: #ffa500;
- background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+ border: solid 1px ${colors.suiLight};
+ background: ${colors.suiDark};
+ background: linear-gradient(to right, ${colors.suiLight}, ${colors.suiDark}, ${colors.suiLight}, ${colors.suiDark}, ${colors.suiLight});
 }
 
 .ssz_deng:after {
@@ -134,15 +147,15 @@ z-index: 99999;
  display: block;
  margin-left: 20px;
  border-radius: 0 0 5px 5px;
- border: solid 1px #dc8f03;
- background: #ffa500;
- background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+ border: solid 1px ${colors.suiLight};
+ background: ${colors.suiDark};
+ background: linear-gradient(to right, ${colors.suiLight}, ${colors.suiDark}, ${colors.suiLight}, ${colors.suiDark}, ${colors.suiLight});
 }
 
 .ssz_deng-t {
  font-family: 华文行楷,华文楷体,Arial,Lucida Grande,Tahoma,sans-serif;
  font-size: 53px !important;
- color: #dc8f03;
+ color: ${colors.suiLight};
  font-weight: bold;
  line-height: 85px;
  text-align: center;
@@ -190,7 +203,7 @@ z-index: 99999;
  <div class="ssz_deng">
   <div class="ssz_xian"></div>
   <div class="ssz_deng-a">
-   <div class="ssz_deng-b"><div class="ssz_deng-t" id="ssz_chun">清</div></div>
+   <div class="ssz_deng-b"><div class="ssz_deng-t" id="ssz_chun">${word.split('')[0]}</div></div>
   </div>
   <div class="ssz_shui ssz_shui-a"><div class="ssz_shui-c"></div><div class="ssz_shui-b"></div></div>
  </div>
@@ -204,7 +217,7 @@ z-index: 99999;
  <div class="ssz_deng">
   <div class="ssz_xian"></div>
   <div class="ssz_deng-a">
-   <div class="ssz_deng-b"><div class="ssz_deng-t" id="ssz_jie">明</div></div>
+   <div class="ssz_deng-b"><div class="ssz_deng-t" id="ssz_jie">${word.split('')[1]}</div></div>
   </div>
   <div class="ssz_shui ssz_shui-a"><div class="ssz_shui-c"></div><div class="ssz_shui-b"></div></div>
  </div>
@@ -223,13 +236,11 @@ z-index: 99999;
     const box = document.getElementById('ssz_box')
     if (isDown) {
       _sszLightUpFlag = false
-      console.log('下', _sszLightUpFlag)
       box.style.display = 'block'
       box1.style.display = 'block'
     }
     if (isUp) {
       _sszLightUpFlag = true
-      console.log('上', _sszLightUpFlag)
       box.style.display = 'none'
       box1.style.display = 'none'
     }
