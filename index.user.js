@@ -5,7 +5,7 @@
 // @description  给所有网站增加灯笼效果
 // @grant        none
 // @author       songsz
-// @match        *://*
+// @include        *://*
 // @updateURL    https://github.com/zggmd/spring-lantern/raw/main/index.user.js
 // @downloadURL https://github.com/zggmd/spring-lantern/raw/main/index.user.js
 // ==/UserScript==
@@ -29,7 +29,7 @@
   //   r2: 'rgba(16, 16, 16, 10%)',
   // }
   // 灯笼展示的文字样式
-  const word = '春节'
+  const word = '福壽'
   const style = document.createElement('style');
   style.innerHTML = `
 .spring_lantern__deng-box {
