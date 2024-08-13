@@ -1,33 +1,35 @@
 // ==UserScript==
 // @name         挂灯笼
 // @namespace    none
-// @version      0.2.0
+// @version      0.2.1
 // @description  给所有网站增加灯笼效果
 // @grant        none
 // @author       songsz
-// @include      *://*
+// @match        *://*
+// @updateURL    https://github.com/zggmd/spring-lantern/raw/main/index.user.js
+// @downloadURL https://github.com/zggmd/spring-lantern/raw/main/index.user.js
 // ==/UserScript==
 
 (function(){
   if(window.top !== window) return; // 在iframe中不渲染灯笼
   // 原版彩色配色颜色备份
-  // const colors = {
-  //   suiLight: '#dc8f03',
-  //   suiDark: '#ffa500',
-  //   deng_box_shadow: 'rgba(250, 108, 0, 1)',
-  //   r1: 'rgba(216, 0, 15, 0.8)',
-  //   r2: 'rgba(216, 0, 15, 0.1)',
-  // }
-  // 喜迎清明，黑白分明
   const colors = {
-    suiLight: '#ffffff',
-    suiDark: '#9b9b9a',
-    deng_box_shadow: 'rgb(74,74,74)',
-    r1: 'rgba(16, 16, 16, 80%)',
-    r2: 'rgba(16, 16, 16, 10%)',
+    suiLight: '#dc8f03',
+    suiDark: '#ffa500',
+    deng_box_shadow: 'rgba(250, 108, 0, 1)',
+    r1: 'rgba(216, 0, 15, 0.8)',
+    r2: 'rgba(216, 0, 15, 0.1)',
   }
+  // 喜迎清明，黑白分明
+  // const colors = {
+  //   suiLight: '#ffffff',
+  //   suiDark: '#9b9b9a',
+  //   deng_box_shadow: 'rgb(74,74,74)',
+  //   r1: 'rgba(16, 16, 16, 80%)',
+  //   r2: 'rgba(16, 16, 16, 10%)',
+  // }
   // 灯笼展示的文字样式
-  const word = '清明'
+  const word = '春节'
   const style = document.createElement('style');
   style.innerHTML = `
 .spring_lantern__deng-box {
