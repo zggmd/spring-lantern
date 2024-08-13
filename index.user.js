@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         挂灯笼
 // @namespace    none
-// @version      0.2.1
+// @version      0.2.2
 // @description  给所有网站增加灯笼效果
 // @grant        none
 // @author       songsz
