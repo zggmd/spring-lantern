@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         挂灯笼
 // @namespace    none
-// @version      0.2.2
+// @version      0.2.3
 // @description  给所有网站增加灯笼效果
 // @grant        none
 // @author       songsz
@@ -29,7 +29,7 @@
   //   r2: 'rgba(16, 16, 16, 10%)',
   // }
   // 灯笼展示的文字样式
-  const word = '福壽'
+  const word = '福福'
   const style = document.createElement('style');
   style.innerHTML = `
 .spring_lantern__deng-box {
