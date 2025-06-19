@@ -14,7 +14,7 @@
    
    [chrome应用商店地址](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?utm_source=chrome-ntp-icon)
    
-2. 新建一个脚本，复制index.js的内容并粘贴到脚本里即可
+2. [点击这里🔗](https://github.com/zggmd/spring-lantern/raw/refs/heads/main/index.user.js) 即可安装
 
 ## 参考文档
 [muzihuaner/deng](https://github.com/muzihuaner/deng/)
